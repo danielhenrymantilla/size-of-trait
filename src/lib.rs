@@ -33,6 +33,7 @@ macro_rules! size_of {
 
 #[doc(hidden)]
 pub mod private {
+    #[inline(always)]
     #[doc(hidden)]
     pub const fn helper<T>(_: [impl FnOnce() -> [T; 0]; 0]) -> usize {
         ::core::mem::size_of::<T>()
